@@ -1,0 +1,21 @@
+﻿{
+  "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.4",
+    "Prism.Plugin.Popups.Unity": "2.0.0.528-pre",
+    "Prism.Unity.Forms": "7.1.0.123-pre",
+    "sqlite-net-pcl": "1.4.118",
+    "SQLite.Net.Core-PCL": "3.1.1",
+    "Xamarin.Forms": "2.5.1.527436"
+  },
+  "frameworks": {
+    "uap10.0.10586": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

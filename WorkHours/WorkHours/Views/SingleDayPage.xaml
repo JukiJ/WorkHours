@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkHours.Views.SingleDayPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="{Binding CurrentDate}" HorizontalOptions="Center" FontSize="50"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="POČETAK" FontSize="30"/>
+                <Label Text="KRAJ" FontSize="30"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center">
+                <ListView RowHeight="60"
+                      HorizontalOptions="Center"
+                      ItemsSource="{Binding Items}"
+                      SelectedItem="{Binding SelectedItem}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding StartTime}" FontSize="20" HorizontalOptions="Start"/>
+                                    <Label Text="-" FontSize="20" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding EndTime}" FontSize="20" HorizontalOptions="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="UKUPNO:" FontSize="30"/>
+                    <Label Text="{Binding TotalTime}" FontSize="30"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

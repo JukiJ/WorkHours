@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkHours.Views.DaysPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="&lt;" Command="{Binding PreviousMonthCommand}" HeightRequest="50" WidthRequest="50" CornerRadius="50" IsVisible="{Binding IsMonth}"/>
+                <Label Text="{Binding Month}" FontSize="40" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20"/>
+                <Button Text=">" Command="{Binding NextMonthCommand}" HeightRequest="50" WidthRequest="50" CornerRadius="50" IsVisible="{Binding IsMonth}"/>
+            </StackLayout>
+            <ListView RowHeight="50"
+                      ItemsSource="{Binding Items}"
+                      SelectedItem="{Binding SelectedItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="LightSkyBlue">
+                                <Label Text="{Binding DayNumber}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="30" VerticalOptions="CenterAndExpand" BackgroundColor="DeepSkyBlue"  WidthRequest="50" HeightRequest="50"/>
+                                <Label Text="{Binding HoursWorked}" Margin="50,0,0,0"  VerticalTextAlignment="Center" FontSize="25"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

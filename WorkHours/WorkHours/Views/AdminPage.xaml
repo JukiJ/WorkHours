@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkHours.Views.AdminPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="{Binding EmployeeName}" Command="{Binding EditEmployeeCommand}"/>
+            <Label Text="{Binding EmployeePosition}"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Month" Command="{Binding CheckHoursCommand}" CommandParameter="Month"/>
+                <Label Text="{Binding MonthHours}"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Week" Command="{Binding CheckHoursCommand}" CommandParameter="Week"/>
+                <Label Text="{Binding WeekHours}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

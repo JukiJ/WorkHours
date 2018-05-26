@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkHours.Views.MainPage"
+             xmlns:control="clr-namespace:WorkHours.CustomControls"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <control:CustomToolbarItem Order="Secondary" Text="Profil" Command="{Binding ProfilePageCommand}" IsVisible="True"/>
+        <control:CustomToolbarItem Order="Secondary" Text="Pretraga radnika" Command="{Binding SearchPageCommand}" IsVisible="{Binding IsAdmin}"/>
+        <control:CustomToolbarItem Order="Secondary" Text="Novi radnik" Command="{Binding NewPersonPageCommand}" IsVisible="{Binding IsAdmin}"/>
+        <control:CustomToolbarItem Order="Secondary" Text="Odjava" Command="{Binding LogoutCommand}" IsVisible="True"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Mjesec" Grid.Row="0" Grid.Column="0" Command="{Binding CheckHoursCommand}" CommandParameter="Month"/>
+                <Label Text="{Binding HoursThisMonth}" Grid.Row="0" Grid.Column="1"/>
+                <Button Text="Tjedan" Grid.Row="1" Grid.Column="0" Command="{Binding CheckHoursCommand}" CommandParameter="Week"/>
+                <Label Text="{Binding HoursThisWeek}" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+            <Button Text="{Binding StartStopButton}" HorizontalOptions="Center" BackgroundColor="{Binding ButtonColor}" Command="{Binding StartStopTimeCommand}"/>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Label Text="{Binding CurrentDate}" FontSize="20" HorizontalOptions="Center"/>
+                <Label Text="{Binding CurrentTime}" FontSize="20" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

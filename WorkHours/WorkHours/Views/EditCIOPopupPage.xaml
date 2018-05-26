@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="WorkHours.Views.EditCIOPopupPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+            <Label Text="Unesi promjene" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding From}" WidthRequest="100"/>
+                <Entry Text="{Binding To}" WidthRequest="100"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Spremi" Command="{Binding SaveChangesCommand}"/>
+                <Button Text="Odbaci" Command="{Binding DiscardChangesCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

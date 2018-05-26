@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkHours.Views.SearchPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="PREZIME ZAPOSLENIKA" FontSize="20"/>
+                <Entry Text="{Binding SearchTerm}" FontSize="20" WidthRequest="120"/>
+            </StackLayout>
+            <ListView RowHeight="60"
+                      ItemsSource="{Binding Employees}"
+                      SelectedItem="{Binding SelectedEmployee}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Surname}"/>
+                                <Label Text="{Binding Position}" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
